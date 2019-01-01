@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf=selectedPost>
   <div class="row ">
     <div class="col-md-2"></div>
     <div class="col-md-8">
@@ -9,8 +9,6 @@
               <h4>{{selectedPost.title}}</h4>
             </div>
           </div>
-        </div>
-        <div class="container">
           <div class="row">
             <div class="col-md-8">
               <p><small class="">Author: {{selectedPost.author}}</small></p>
@@ -19,12 +17,15 @@
               <p class="float-right"><small>Published on: {{selectedPost.publish_date}}</small></p>
             </div>
           </div>
-        </div>
-        <div class="container">
           <div class="row">
             <div class="col-md-12">
               <p>{{selectedPost.description}}</p>
               <p [innerHTML]="selectedPost.content"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <a class="float-right" routerLink="add-comment">Add Comment</a>
             </div>
           </div>
         </div>
@@ -32,37 +33,33 @@
     </div>
     <div class="col-md-2"></div>
   </div>
-
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
-        <div class="comment-wrapper" *ngFor="let comment of blogPostsComments | orderBy:date">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <h4>Comment:</h4>
-                </div>
-              </div>
+<!--Adding Comments-->
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="comment-wrapper" *ngFor="let comment of blogPostsComments | orderBy:date">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Comment:</h4>
             </div>
-            <div class="container">
-                <div class="row">
-                  <div class="col-md-8">
-                    <p><small class="">{{comment.user}}</small></p>
-                  </div>
-                  <div class="col-md-4">
-                    <p class="float-right"><small>Commented on: {{comment.date}}</small></p>
-                  </div>
-                </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <p><small class="">{{comment.user}}</small></p>
             </div>
-            <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <p>{{comment.content}}</p>
-                  </div>
-                </div>
+            <div class="col-md-4">
+              <p class="float-right"><small>Commented on: {{comment.date}}</small></p>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p>{{comment.content}}</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-2"></div>
+    </div>
+    <div class="col-md-2"></div>
   </div>
 </div>
