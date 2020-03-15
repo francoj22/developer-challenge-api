@@ -1,3 +1,6 @@
+![Alt text](/Screen%20Shot%202020-03-15%20at%2001.19.41.png?raw=true "Optional Title")
+![Alt text](/Screen%20Shot%202020-03-15%20at%2001.19.04.png?raw=true "Optional Title")
+![Alt text](/Screen%20Shot%202020-03-15%20at%2001.19.20.png?raw=true "Optional Title")
 # LetsGetChecked front end challenge REST API
 > Starter REST API for LetsGetChecked front end coding challenge
 
