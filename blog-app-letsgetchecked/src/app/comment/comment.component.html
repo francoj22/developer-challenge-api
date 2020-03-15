@@ -1,34 +1,27 @@
-<a *ngIf=postID class="btn" [routerLink]="['/blog-post', postID]">Back</a>
-<div class="container">
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-      <div>
-        <div>
-          <h2>
-            Add New Comment
-          </h2>
-        </div>
-        <div>
-          <form id="formNewComment" name='formNewComment' #commentData="ngForm" (ngSubmit)="addNewComment(commentData.value)">
-            <div class="form-group">
-              <label>Name:</label>
-              <input class="form-control" type="text" name="user" id="user" placeholder="Enter Name" ngModel>
-            </div>
-            <br>
-
-            <div class="form-group">
-              <label>Comment:</label>
-              <textarea class="form-control" type="textarea" name="content" id="content" placeholder="Enter Comment" ngModel></textarea>
-            </div>
-            <br>
-
-            <input class="btn custom-btn" type="submit" value="Add Comment">
-          </form>
-          <h4 class="text-success confirm-style" *ngIf="isAdded">{{confirmationString}}</h4>
-        </div>
+<section class="clean-block clean-form dark">
+  <div class="container">
+      <div class="block-heading">
+          <h2 class="text-info">Add Comment</h2>
       </div>
-    </div>
-    <div class="col-md-4"></div>
+      <div>
+        <form id="formNewComment" name='formNewComment' #commentData="ngForm" (ngSubmit)="addNewComment(commentData.value)">
+          <div class="form-group">
+            <label for="user">Name:</label>
+            <input class="form-control" type="text" name="user" id="user" placeholder="Enter Name" ngModel>
+          </div>
+          <br>
+
+          <div class="form-group">
+            <label for="content">Comment:</label>
+            <textarea class="form-control" type="textarea" name="content" id="content" placeholder="Enter Comment" ngModel></textarea>
+          </div>
+          <br>
+
+          <input class="btn btn-primary btn-block" type="submit" value="Add Comment">
+        </form>
+        <h4 class="text-success confirm-style" *ngIf="isAdded">{{confirmationString}}</h4>
+      </div>
+      <a *ngIf=postID [routerLink]="['/blog-post', postID]"><button class="btn btn-outline-primary btn-sm" type="button"><- Back</button></a>
   </div>
-</div>
+</section>
+

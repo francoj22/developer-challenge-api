@@ -1,38 +1,20 @@
-<div class="container">
-  <div class="row ">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-      <div class="blog-wrapper" *ngFor="let post of blogPosts  | orderBy:publish_date">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h4>{{post.title}}</h4>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-            <div class="row">
-              <div class="col-md-8">
-                <p><small class="">{{post.author}}</small></p>
-              </div>
-              <div class="col-md-4">
-                <p class="float-right"><small>Published on: {{post.publish_date}}</small></p>
-              </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-              <div class="col-md-10">
-                <p>{{post.description}}</p>
-              </div>
-              <div class="col-md-2">
-                <a class="float-right" [routerLink]="['/blog-post', post.id]" target="_blank">Read More</a>
-              </div>
-            </div>
-        </div>
-
+<section class="clean-block clean-blog-list dark">
+  <div class="container">
+      <div class="block-heading">
+          <h2 class="text-info">Blog Post List</h2>
+          <p>News</p>
       </div>
-    </div>
-    <div class="col-md-2"></div>
+      <div class="block-content">
+          <div class="clean-blog-post">
+              <div class="row">
+                  <div class="col-12 blog-padding" *ngFor="let post of blogPosts  | orderBy:publish_date">
+                      <h3>{{post.title}}</h3>
+                      <div class="info"><span class="text-muted">{{post.publish_date}} by <a href="#">{{post.author}}</a></span></div>
+                      <p>{{post.description}}</p>
+                      <a [routerLink]="['/blog-post', post.id]"><button class="btn btn-outline-primary btn-sm" type="button">Read More</button></a>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
-</div>
+</section>

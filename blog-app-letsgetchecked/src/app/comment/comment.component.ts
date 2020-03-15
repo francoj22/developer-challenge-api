@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CommentComponent implements OnInit {
 
-  confirmationString: string = 'New comment has been added !!';
+  confirmationString: string = 'Comment added';
   isAdded: boolean = false;
   commentObj: object = [];
   postID: any;
